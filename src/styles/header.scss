@@ -1,0 +1,74 @@
+@import 'general';
+
+.header {
+	padding: 22px 0;
+
+	.container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.logo {
+		max-width: 120px;
+	}
+
+	.search-form .search {
+		min-width: 420px;		
+		flex-shrink: 0;
+	}
+	
+	.header-right {
+		display: flex;
+		justify-content: flex-end;
+		-ms-align-items: flex-end;
+		align-items: flex-end;
+
+		.account,
+		.cart,
+		.language {
+			@include align-center;
+			margin-right: 32px;
+
+			.img-wrap {
+				width: 20px;
+				margin-right: 4px;
+			}
+		}
+
+		.account {
+			span {
+				font-size: .8em;
+			}
+		}
+
+		.cart {
+			position: relative;
+
+			span {
+				background-color: $aquagreen;
+				color: #fff;
+				border-radius: 50%;
+				width: 14px;
+				height: 14px;
+				font-size: .7em;
+				text-align: center;
+			}
+
+			&:after {
+				content: '';
+				background: $gray;
+				width: 1px;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: -16px;
+			}
+		}
+
+		.language {
+			margin-right: 0;
+		}
+	}
+}

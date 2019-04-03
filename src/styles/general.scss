@@ -1,0 +1,283 @@
+/* 
+* Background property:
+* background: bg-color bg-image position/bg-size bg-repeat bg-origin bg-clip bg-attachment initial|inherit;
+*
+* Font property:
+* font: font-style font-variant font-weight font-size/line-height font-family|caption|icon|menu|message-box|small-caption|status-bar|initial|inherit;
+*/
+
+/* Cores */
+$darkblue: #011627;
+$yellow: #ff9f1c;
+$aquagreen: #2ec4b6;
+
+// Cinzas
+$gray: #b4b4b4;
+
+/* Fontes */
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i,900,900i');
+$OpenS: 'Open Sans', sans-serif;
+
+/* Estilos padrão */
+ 
+/* Mixins */
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin align-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin list-format {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/*  Animações */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    display: none;
+  }
+
+  100% {
+    opacity: 1;
+    display: block;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    display: block;
+  }
+
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    transform: translateX(-250px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeOutRight {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-250px);
+  } 
+}
+
+@keyframes bodyInRight {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(250px);
+  }
+}
+
+@keyframes bodyOutRight {
+  0% {
+    transform: translateX(250px);
+  }
+
+  100% {
+    transform: translateX(0);
+  } 
+}
+
+/* Corpo */
+
+html,
+body {
+  overflow-X: hidden;
+  scroll-behavior: smooth;
+  color: red;
+
+  &.modal-open {
+    overflow-y: hidden;
+    padding-right: 0 !important;
+  }
+}
+
+body {
+  font-family: $OpenS;
+  color: $gray;
+  
+  &,
+  span,
+  p,
+  label {
+    font-size: 14px;
+  }
+}
+
+*,
+*::focus,
+*::active,
+*::visited,
+*::hover,
+::before,
+::after {
+  outline: none !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* Títulos, parágrafos e links */
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $OpenS;
+  margin: 0 0 22px;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2.2em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+a {
+  &,
+  &:hover,
+  &:active
+  &:visited,
+  &:focus {
+    text-decoration: none;
+    transition: .5s;
+  }
+}
+
+// Inputs 
+
+input,
+select,
+textarea {
+    &:focus {
+      outline: none;
+    }
+}
+
+// Botões
+
+.btn {
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    white-space: wrap;
+    border-radius: 16px;
+    padding: 4px 20px 6px;
+    transition: .5s;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1em;
+    font-family: $OpenS;
+    outline: none;
+  }
+}
+
+.btn-primary {
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $yellow;
+    border-color: $yellow;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}
+
+/*** ESTILO DOS COMPONENTES ***/
+
+// SearchBar
+.search-form {
+    .search,
+    .btn-search {
+      border: 0;
+      border-bottom: 1px solid $gray;
+      padding: 4px 0;
+    }
+
+    .btn-search {
+      background: transparent;
+      border-radius: 0;
+    }
+}
+
+// Image
+figure {
+  margin: 0;
+}
+
+.img-wrap {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 0;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
